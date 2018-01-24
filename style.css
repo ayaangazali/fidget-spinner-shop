@@ -6,6 +6,35 @@ body {
   color: #333333;
 }
 
-h1 {
+#header {
+  background-color: #2b5797;
+  color: #ffffff;
+  padding: 20px;
   text-align: center;
+}
+
+#header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+#nav {
+  background-color: #1e3d6b;
+  padding: 10px;
+  text-align: center;
+}
+
+#nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0px 15px;
+  font-size: 16px;
+}
+
+#nav a:hover {
+  text-decoration: underline;
+}
+
+#content {
+  padding: 20px;
 }
