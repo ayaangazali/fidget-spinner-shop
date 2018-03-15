@@ -20,7 +20,26 @@
 
   <h2>Our Spinners</h2>
 
+  <div id="productList"></div>
+
+  <div class="clear"></div>
+
 </div>
+
+<script src="products.js"></script>
+<script>
+// build the product grid
+var html = "";
+for (var i = 0; i < products.length; i++) {
+  var p = products[i];
+  html += '<div class="product">';
+  html += '<img src="' + p.image + '" alt="' + p.name + '">';
+  html += '<h3>' + p.name + '</h3>';
+  html += '<p class="price">$' + p.price + '</p>';
+  html += '</div>';
+}
+document.getElementById("productList").innerHTML = html;
+</script>
 
 </body>
 </html>
