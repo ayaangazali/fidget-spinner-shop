@@ -38,3 +38,34 @@ body {
 #content {
   padding: 20px;
 }
+
+.product {
+  float: left;
+  width: 200px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.product img {
+  width: 150px;
+  height: 150px;
+  background-color: #dddddd;
+}
+
+.product h3 {
+  font-size: 16px;
+  color: #333333;
+}
+
+.price {
+  color: #cc0000;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.clear {
+  clear: both;
+}
