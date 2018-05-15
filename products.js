@@ -9,3 +9,12 @@ var products = [
   { id: 7, name: "LED Light Up Spinner", price: 16.99, image: "images/spinner7.png" },
   { id: 8, name: "Mini Keychain Spinner", price: 7.99, image: "images/spinner8.png" }
 ];
+
+function getProductById(pid) {
+  for (var i = 0; i < products.length; i++) {
+    if (products[i].id == pid) {
+      return products[i];
+    }
+  }
+  return null;
+}
