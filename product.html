@@ -24,13 +24,26 @@
 
 <script src="products.js"></script>
 <script>
-// just show the first product for now
-var p = products[0];
-var html = "";
-html += '<h2>' + p.name + '</h2>';
-html += '<p class="price">$' + p.price + '</p>';
-html += '<p>This is an awesome fidget spinner!</p>';
-document.getElementById("productDetail").innerHTML = html;
+// get the id from the url
+function getQueryId() {
+  var q = window.location.search;
+  q = q.replace("?", "");
+  var parts = q.split("=");
+  return parts[1];
+}
+
+var theId = getQueryId();
+var p = getProductById(theId);
+
+if (p == null) {
+  document.getElementById("productDetail").innerHTML = "<p>Sorry, product not found!</p>";
+} else {
+  var html = "";
+  html += '<h2>' + p.name + '</h2>';
+  html += '<p class="price">$' + p.price + '</p>';
+  html += '<p>This is an awesome fidget spinner! Spins for a really long time and helps you focus. Great for kids and adults. Limited stock so buy now!</p>';
+  document.getElementById("productDetail").innerHTML = html;
+}
 </script>
 
 </body>
