@@ -23,6 +23,7 @@
 </div>
 
 <script src="products.js"></script>
+<script src="cart.js"></script>
 <script>
 // get the id from the url
 function getQueryId() {
@@ -42,6 +43,7 @@ if (p == null) {
   html += '<h2>' + p.name + '</h2>';
   html += '<p class="price">$' + p.price + '</p>';
   html += '<p>This is an awesome fidget spinner! Spins for a really long time and helps you focus. Great for kids and adults. Limited stock so buy now!</p>';
+  html += '<button onclick="addToCart(' + p.id + ')">Add to Cart</button>';
   document.getElementById("productDetail").innerHTML = html;
 }
 </script>

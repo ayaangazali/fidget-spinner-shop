@@ -27,6 +27,7 @@
 </div>
 
 <script src="products.js"></script>
+<script src="cart.js"></script>
 <script>
 // build the product grid
 var html = "";
@@ -37,6 +38,7 @@ for (var i = 0; i < products.length; i++) {
   html += '<h3>' + p.name + '</h3>';
   html += '<p class="price">$' + p.price + '</p>';
   html += '<p><a href="product.html?id=' + p.id + '">View Details</a></p>';
+  html += '<button onclick="addToCart(' + p.id + ')">Add to Cart</button>';
   html += '</div>';
 }
 document.getElementById("productList").innerHTML = html;
