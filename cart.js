@@ -28,3 +28,29 @@ function addToCart(pid) {
   saveCart(cart);
   alert("Added to cart!");
 }
+
+function renderCart() {
+  var cart = getCart();
+  var html = "";
+
+  if (cart.length == 0) {
+    document.getElementById("cartTable").innerHTML = "<p>Your cart is empty.</p>";
+    return;
+  }
+
+  html += "<table>";
+  html += "<tr><th>Product</th><th>Price</th><th>Qty</th></tr>";
+
+  for (var i = 0; i < cart.length; i++) {
+    var p = getProductById(cart[i].id);
+    html += "<tr>";
+    html += "<td>" + p.name + "</td>";
+    html += "<td>$" + p.price + "</td>";
+    html += "<td>" + cart[i].qty + "</td>";
+    html += "</tr>";
+  }
+
+  html += "</table>";
+
+  document.getElementById("cartTable").innerHTML = html;
+}
