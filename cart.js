@@ -39,18 +39,24 @@ function renderCart() {
   }
 
   html += "<table>";
-  html += "<tr><th>Product</th><th>Price</th><th>Qty</th></tr>";
+  html += "<tr><th>Product</th><th>Price</th><th>Qty</th><th>Total</th></tr>";
 
+  var grandTotal = 0;
   for (var i = 0; i < cart.length; i++) {
     var p = getProductById(cart[i].id);
+    var lineTotal = p.price * cart[i].qty;
+    grandTotal = grandTotal + lineTotal;
+
     html += "<tr>";
     html += "<td>" + p.name + "</td>";
     html += "<td>$" + p.price + "</td>";
     html += "<td>" + cart[i].qty + "</td>";
+    html += "<td>$" + lineTotal.toFixed(2) + "</td>";
     html += "</tr>";
   }
 
   html += "</table>";
+  html += '<h3 style="text-align:right;">Grand Total: $' + grandTotal + '</h3>';
 
   document.getElementById("cartTable").innerHTML = html;
 }

@@ -87,3 +87,19 @@ button:hover {
 .clear {
   clear: both;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table td, table th {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background-color: #2b5797;
+  color: #ffffff;
+}
