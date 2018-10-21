@@ -29,6 +29,18 @@ function addToCart(pid) {
   alert("Added to cart!");
 }
 
+function removeFromCart(pid) {
+  var cart = getCart();
+  var newCart = [];
+  for (var i = 0; i < cart.length; i++) {
+    if (cart[i].id != pid) {
+      newCart.push(cart[i]);
+    }
+  }
+  saveCart(newCart);
+  renderCart();
+}
+
 function renderCart() {
   var cart = getCart();
   var html = "";
@@ -39,7 +51,7 @@ function renderCart() {
   }
 
   html += "<table>";
-  html += "<tr><th>Product</th><th>Price</th><th>Qty</th><th>Total</th></tr>";
+  html += "<tr><th>Product</th><th>Price</th><th>Qty</th><th>Total</th><th></th></tr>";
 
   var grandTotal = 0;
   for (var i = 0; i < cart.length; i++) {
@@ -52,6 +64,7 @@ function renderCart() {
     html += "<td>$" + p.price + "</td>";
     html += "<td>" + cart[i].qty + "</td>";
     html += "<td>$" + lineTotal.toFixed(2) + "</td>";
+    html += '<td><button onclick="removeFromCart(' + p.id + ')">Remove</button></td>';
     html += "</tr>";
   }
 
