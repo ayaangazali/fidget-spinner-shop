@@ -73,3 +73,14 @@ function renderCart() {
 
   document.getElementById("cartTable").innerHTML = html;
 }
+
+function checkout() {
+  var cart = getCart();
+  if (cart.length == 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+  alert("Order placed!");
+  localStorage.removeItem("cart");
+  renderCart();
+}
