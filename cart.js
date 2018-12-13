@@ -69,7 +69,7 @@ function renderCart() {
   }
 
   html += "</table>";
-  html += '<h3 style="text-align:right;">Grand Total: $' + grandTotal + '</h3>';
+  html += '<h3 style="text-align:right;">Grand Total: $' + grandTotal.toFixed(2) + '</h3>';
 
   document.getElementById("cartTable").innerHTML = html;
 }
