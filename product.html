@@ -41,10 +41,16 @@ if (p == null) {
   document.getElementById("productDetail").innerHTML = "<p>Sorry, product not found!</p>";
 } else {
   var html = "";
+  html += '<div style="float:left; width:300px;">';
+  html += '<img src="' + p.image + '" style="width:280px; height:280px; background-color:#dddddd;">';
+  html += '</div>';
+  html += '<div style="float:left; width:400px; padding-left:30px;">';
   html += '<h2>' + p.name + '</h2>';
   html += '<p class="price">$' + p.price + '</p>';
   html += '<p>This is an awesome fidget spinner! Spins for a really long time and helps you focus. Great for kids and adults. Limited stock so buy now!</p>';
   html += '<button onclick="addToCart(' + p.id + ')">Add to Cart</button>';
+  html += '</div>';
+  html += '<div class="clear"></div>';
   document.getElementById("productDetail").innerHTML = html;
 }
 </script>
